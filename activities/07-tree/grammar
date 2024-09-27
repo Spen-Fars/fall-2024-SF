@@ -14,4 +14,27 @@ token RPAREN '\)'
 %
 
 <tree>:TreeNum  ::= <NUM>
-<tree>:TreeNode ::= LPAREN TAG <tree>:leftNode <tree>:rightNode RPAREN
+<tree>:TreeNode ::= LPAREN <TAG> <tree>:leftNode <tree>:rightNode RPAREN
+
+%
+
+Tree
+%%%
+public void $run() {
+    System.out.println(this);
+}
+%%%
+
+TreeNum
+%%%
+public String toString() {
+    return num.toString();
+}
+%%%
+
+TreeNode
+%%%
+public String toString() {
+    return "(" + tag + " " + leftNode + " " + rightNode + ")";
+}
+%%%
