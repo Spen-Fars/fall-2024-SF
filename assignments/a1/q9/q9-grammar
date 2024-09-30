@@ -1,0 +1,43 @@
+skip WS '\s+'
+skip COMMENT '#.*'
+token SKIP 'skip'
+token TOKEN 'token'
+token NAME '[A-Z]+'
+token QUOTE '\'\S+\''
+
+%
+
+<lexspec> ::= <rule> <NAME> <QUOTE>
+<rule>:Tkn ::= <TOKEN>
+<rule>:Null ::= 
+<rule>:Skp ::= <SKIP>
+
+%
+
+Lexspec
+%%%
+public void $run() {
+    System.out.println(this.rule.toString() + " " + name.toString() + " " + quote.toString());
+}
+%%%
+
+Tkn
+%%%
+public String toString() {
+    return token.toString();
+}
+%%%
+
+Skp
+%%%
+public String toString() {
+    return skip.toString();
+}
+%%%
+
+Null
+%%%
+public String toString() {
+    return "";
+}
+%%%
