@@ -1,12 +1,54 @@
 # BINARY
 # Lexical specification
+token NL '\n'
+token ZERO '0'
+token ONE '1'
 
 %
 
 # Syntactic specification
 <start> ::= <bits> NL
 <bits>  **= <bit>
+<bit>:Zero   ::= ZERO
+<bit>:One   ::= ONE
 
 %
 
 # Semantic specification
+Start
+%%%
+    public void $run() {
+        int num = bits.eval();
+        System.out.println("" + num);
+    }
+%%%
+
+Bits
+%%%
+    public int eval() {
+        int sum = 0;
+        for (Bit b : bitList) {
+            sum = sum*2+b.eval();
+        }
+        return sum;
+    }
+%%%
+
+Bit
+%%%
+    public abstract int eval();
+%%%
+
+Zero
+%%%
+    public int eval() {
+        return 0;
+    }
+%%%
+
+One
+%%%
+    public int eval() {
+        return 1;
+    }
+%%%

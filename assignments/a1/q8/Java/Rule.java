@@ -9,12 +9,12 @@ public abstract class Rule /*Rule:class*/ {
         Token t$ = scn$.cur();
         Token.Match match$ = t$.match;
         switch(match$) {
-        case SKIP:
-            return Skp.parse(scn$,trace$);
-        case TOKEN:
-            return Tkn.parse(scn$,trace$);
         case NAME:
             return Null.parse(scn$,trace$);
+        case TOKEN:
+            return Tkn.parse(scn$,trace$);
+        case SKIP:
+            return Skp.parse(scn$,trace$);
         default:
             throw new PLCCException(
                 "Parse error",

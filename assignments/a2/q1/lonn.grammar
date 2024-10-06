@@ -29,6 +29,10 @@ Lon
         int minSoFar = Integer.parseInt(num.toString());
         return nums.min(minSoFar); // Get the overall minimum.
     }
+
+    // public String toString(Token tostr) {
+    //     return tostr.toString();
+    // }
 %%%
 
 Nums
@@ -39,13 +43,16 @@ Nums
 NumsNode
 %%%
     public int min(int minSoFar) {
-        return 0; // This is just a stub. Replace it with your implementation.
+        if (Integer.parseInt(num.toString()) <= minSoFar) {
+            return Integer.parseInt(num.toString());
+        }
+        return minSoFar; // This is just a stub. Replace it with your implementation.
     }
 %%%
 
 NumsNull
 %%%
     public int min(int minSoFar) {
-        return 0; // This is just a stub. Replace it with your implementation.
+        return minSoFar; // This is just a stub. Replace it with your implementation.
     }
 %%%
