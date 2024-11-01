@@ -1,4 +1,4 @@
 Question 3: Goo(Token var, Silly silly)
-Question 4: Many(List<Rule> ruleList, List<OF> tokenList, List<Stuff> stuffList)
+Question 4: Many(List<Rule> ruleList, Token of, List<Stuff> stuffList)
 Question 5: Classes(Token c1, Token c2, Token c3)
 Question 6: <var> ::= TOKEN <foo>

@@ -9,10 +9,10 @@ public abstract class Nums /*Nums:class*/ {
         Token t$ = scn$.cur();
         Token.Match match$ = t$.match;
         switch(match$) {
-        case RPAREN:
-            return NumsNull.parse(scn$,trace$);
         case NUM:
             return NumsNode.parse(scn$,trace$);
+        case RPAREN:
+            return NumsNull.parse(scn$,trace$);
         default:
             throw new PLCCException(
                 "Parse error",
