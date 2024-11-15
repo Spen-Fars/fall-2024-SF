@@ -9,32 +9,32 @@ public abstract class Exp /*Exp:class*/ {
         Token t$ = scn$.cur();
         Token.Match match$ = t$.match;
         switch(match$) {
-        case PROC:
-            return ProcExp.parse(scn$,trace$);
-        case IF:
-            return IfExp.parse(scn$,trace$);
-        case MULOP:
-        case SUB1OP:
-        case SUBOP:
-        case ADD1OP:
-        case ZEROP:
-        case DIVOP:
-        case ADDOP:
-            return PrimappExp.parse(scn$,trace$);
-        case DOT:
-            return AppExp.parse(scn$,trace$);
-        case SET:
-            return SetExp.parse(scn$,trace$);
-        case VAR:
-            return VarExp.parse(scn$,trace$);
-        case LETREC:
-            return LetrecExp.parse(scn$,trace$);
         case LIT:
             return LitExp.parse(scn$,trace$);
+        case VAR:
+            return VarExp.parse(scn$,trace$);
+        case DIVOP:
+        case ADD1OP:
+        case SUB1OP:
+        case SUBOP:
+        case ADDOP:
+        case ZEROP:
+        case MULOP:
+            return PrimappExp.parse(scn$,trace$);
+        case IF:
+            return IfExp.parse(scn$,trace$);
         case LET:
             return LetExp.parse(scn$,trace$);
+        case LETREC:
+            return LetrecExp.parse(scn$,trace$);
+        case PROC:
+            return ProcExp.parse(scn$,trace$);
+        case SET:
+            return SetExp.parse(scn$,trace$);
         case LBRACE:
             return SeqExp.parse(scn$,trace$);
+        case DOT:
+            return AppExp.parse(scn$,trace$);
         default:
             throw new PLCCException(
                 "Parse error",

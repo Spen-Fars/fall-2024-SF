@@ -11,17 +11,17 @@ public abstract class Exp /*Exp:class*/ {
         switch(match$) {
         case LIT:
             return LitExp.parse(scn$,trace$);
-        case VAR:
-            return VarExp.parse(scn$,trace$);
-        case NEGOP:
-        case ADD1OP:
         case ZEROP:
-        case SUBOP:
         case MULOP:
+        case ADD1OP:
         case DIVOP:
+        case NEGOP:
         case ADDOP:
+        case SUBOP:
         case SUB1OP:
             return PrimappExp.parse(scn$,trace$);
+        case VAR:
+            return VarExp.parse(scn$,trace$);
         default:
             throw new PLCCException(
                 "Parse error",

@@ -1,0 +1,4 @@
+QUESTION 1: SET
+QUESTION 2: NAME
+QUESTION 5: [int => int]
+QUESTION 6: add1(0) is not a bool, let p = proc() : int 9 in p is not a primitive int type

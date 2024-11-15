@@ -24,16 +24,16 @@ public class Rands /*Rands:class*/ {
         Token t$ = scn$.cur();
         Token.Match match$ = t$.match;
         switch(match$) {
-        case NEGOP:
-        case SUBOP:
-        case LIT:
         case DIVOP:
         case VAR:
-        case SUB1OP:
-        case ADD1OP:
-        case ZEROP:
+        case SUBOP:
         case MULOP:
+        case SUB1OP:
+        case ZEROP:
+        case ADD1OP:
+        case NEGOP:
         case ADDOP:
+        case LIT:
             while(true) {
                 expList.add(Exp.parse(scn$, trace$));
                 t$ = scn$.cur();
